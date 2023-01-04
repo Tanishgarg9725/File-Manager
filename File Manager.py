@@ -54,32 +54,32 @@ def move_file():
     source = open_window()
     destination =filedialog.askdirectory()
     if(source==destination):
-        mb.showinfo('confirmation', "Source and destination are same")
+        mb.showinfo('Confirmation', "Source And Destination Are Same")
     else:
         shutil.move(source, destination)  
-        mb.showinfo('confirmation', "File Moved !")
+        mb.showinfo('Confirmation', "File Moved !")
 
 # function to make a new folder
 def make_folder():
     newFolderPath = filedialog.askdirectory()
-    print("Enter name of new folder")
+    print("Enter Name Of New Folder")
     newFolder=input()
     path = os.path.join(newFolderPath, newFolder)  
     os.mkdir(path)
-    mb.showinfo('confirmation', "Folder created !")
+    mb.showinfo('Confirmation', "Folder Created !")
 
 # function to remove a folder
 def remove_folder():
     delFolder = filedialog.askdirectory()
     os.rmdir(delFolder)
-    mb.showinfo('confirmation', "Folder Deleted !")
+    mb.showinfo('Confirmation', "Folder Deleted !")
 
 # function to list all the files in folder
 def list_files():
     folderList = filedialog.askdirectory()
     sortlist=sorted(os.listdir(folderList))       
     i=0
-    print("Files in ", folderList, "folder are:")
+    print("Files In ", folderList, "Folder Are:")
     while(i<len(sortlist)):
         print(sortlist[i]+'\n')
         i+=1
@@ -90,25 +90,24 @@ def list_files():
 root = Tk()
 
 # creating label and buttons to perform operations
-Label(root, text="TechVidvan File Manager", font=("Helvetica", 16), fg="blue").grid(row = 5, column = 2)
+Label(root, text="File Manager", font=("Helvetica", 16), fg="blue").grid(row = 5, column = 2)
 
-Button(root, text = "Open a File", command = open_file).grid(row=15, column =2)
+Button(root, text = "Open A File", command = open_file).grid(row=15, column =2)
 
-Button(root, text = "Copy a File", command = copy_file).grid(row = 25, column = 2)
+Button(root, text = "Copy A File", command = copy_file).grid(row = 25, column = 2)
 
-Button(root, text = "Delete a File", command = delete_file).grid(row = 35, column = 2)
+Button(root, text = "Delete A File", command = delete_file).grid(row = 35, column = 2)
 
-Button(root, text = "Rename a File", command = rename_file).grid(row = 45, column = 2)
+Button(root, text = "Rename A File", command = rename_file).grid(row = 45, column = 2)
 
-Button(root, text = "Move a File", command = move_file).grid(row = 55, column =2)
+Button(root, text = "Move A File", command = move_file).grid(row = 55, column =2)
 
-Button(root, text = "Make a Folder", command = make_folder).grid(row = 75, column = 2)
+Button(root, text = "Make A Folder", command = make_folder).grid(row = 75, column = 2)
 
-Button(root, text = "Remove a Folder", command = remove_folder).grid(row = 65, column =2)
+Button(root, text = "Remove A Folder", command = remove_folder).grid(row = 65, column =2)
 
-Button(root, text = "List all Files in Directory", command = list_files).grid(row = 85,column = 2)
+Button(root, text = "List All Files In Directory", command = list_files).grid(row = 85,column = 2)
 
 
 
 root.mainloop()
-
